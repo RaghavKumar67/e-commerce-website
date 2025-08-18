@@ -11,22 +11,34 @@ export default function Home() {
       </section>
 
       {/* Style Offers Section - constrained width */}
-      <section className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {homeData.styleOffers.map((offer) => (
-          <div
-            key={offer.id}
-            className="flex flex-col items-center text-center bg-white p-6 shadow rounded-lg"
-          >
-            <img
-              src={offer.image}
-              alt={offer.title}
-              className="w-24 h-24 mb-4 object-cover"
-            />
-            <h3 className="text-lg font-semibold">{offer.title}</h3>
-            <p className="text-gray-500 text-sm">{offer.discount}</p>
-          </div>
-        ))}
-      </section>
+      <section className="max-w-7xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+  {/* Left Offer Box */}
+  <div className="bg-gradient-to-r from-yellow-200 to-orange-100 rounded-2xl p-10 flex flex-col justify-between">
+    <div className="pt-6">
+      <p className="text-sm font-semibold text-gray-700">NEW STYLE</p>
+      <h2 className="text-2xl md:text-4xl font-bold max-w-xl leading-snug">
+        Get 65% Offer & Make New Fusion.
+      </h2>
+    </div>
+    <button className="mt-6 inline-flex items-center px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-medium rounded-full shadow-md transition w-auto self-start">
+      Shop Now <span className="ml-2">➜</span>
+    </button>
+  </div>
+
+  {/* Right Offer Box */}
+  <div className="bg-pink-200 rounded-2xl p-10 flex flex-col justify-between">
+    <div className="pt-6">
+      <p className="text-sm font-semibold text-gray-700">MEGA OFFER</p>
+      <h2 className="text-2xl md:text-4xl font-bold  max-w-xl leading-snug">
+        Make your New Styles with Our Products
+      </h2>
+    </div>
+    <button className="mt-6 inline-flex items-center px-5 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full shadow-md transition w-auto self-start">
+      Shop Now <span className="ml-2">➜</span>
+    </button>
+  </div>
+</section>
+
 
       {/* Product Categories */}
       <section className="max-w-7xl mx-auto px-4 py-8">

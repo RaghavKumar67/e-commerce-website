@@ -8,7 +8,7 @@ export default function MainLayout() {
     <>
       <Header />
       {/* Main should allow full-width (for Hero Slider etc.) */}
-      <main className="p-4">
+      <main>
         <Outlet />
       </main>
       <Footer />

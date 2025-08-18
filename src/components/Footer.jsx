@@ -88,7 +88,7 @@ export default function Footer() {
       {/* --- Bottom Section --- */}
       <div className="bg-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-3 sm:gap-0">
-          <p>© 2025 ShopCart. Built with ❤️ using React.</p>
+          <p>© 2025</p>
           <div className="flex space-x-4">
             <a href="#" className="hover:text-yellow-400">
               Privacy Policy

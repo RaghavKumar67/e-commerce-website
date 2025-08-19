@@ -7,7 +7,7 @@ export default function MainLayout() {
   return (
     <>
       <Header />
-      {/* Main should allow full-width (for Hero Slider etc.) */}
+      
       <main>
         <Outlet />
       </main>

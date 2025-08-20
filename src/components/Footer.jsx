@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 text-sm">
+    <footer className="bg-gray-900 text-gray-300 text-sm w-full overflow-hidden">
       {/* --- Top Section --- */}
       <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Logo & About */}

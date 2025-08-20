@@ -29,7 +29,7 @@ export default function Header() {
             </a>
           </div>
           {/* Right Contact Info */}
-          <div className="text-gray-800 text-center sm:text-right">
+          <div className="text-gray-800 text-center sm:text-right hidden sm:block">
             Need help?{" "}
             <span className="text-pink-600 font-semibold">+ 00645 4568</span>
           </div>
@@ -90,7 +90,7 @@ export default function Header() {
 
       {/* --- Purple Navigation Bar (Desktop only) --- */}
       <div className="bg-purple-600">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-white">
+        <div className="max-w-7xl mx-auto py-3 flex items-center justify-between text-white">
           {/* All Categories Dropdown (desktop only) */}
           <div className="hidden md:block">
             <AllCategoriesDropdown />

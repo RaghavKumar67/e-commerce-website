@@ -1,14 +1,30 @@
 import React from "react";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaHeart, FaExpand } from "react-icons/fa";
+
 export default function ProductCard({ product, onAddToCart }) {
   return (
-    <div className="bg-white rounded-xl shadow-md p-4">
+    <div className="bg-white rounded-xl shadow-md p-4 group relative overflow-hidden">
       {/* Product Image */}
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-60 object-contain rounded-lg"
-      />
+      <div className="relative">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-60 object-contain rounded-lg"
+        />
+
+        {/* Hover Overlay Buttons */}
+        <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
+          {/* Favorite Button */}
+          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-yellow-400 hover:text-white transition">
+            <FaHeart size={16} />
+          </button>
+
+          {/* Expand / Details Button */}
+          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-purple-600 hover:text-white transition">
+            <FaExpand size={16} />
+          </button>
+        </div>
+      </div>
 
       {/* Rating */}
       <div className="flex text-yellow-500 mt-2">
@@ -18,28 +34,28 @@ export default function ProductCard({ product, onAddToCart }) {
 
       {/* Product Info */}
       <h3 className="font-semibold mt-2">{product.name}</h3>
+
       {/* Price Section */}
-        <div className="flex items-center gap-2 mt-1">
+      <div className="flex items-center gap-2 mt-1">
         <div className="text-sm text-gray-500 line-through">
-            ${product.oldPrice}
+          ${product.oldPrice}
         </div>
         <div className="text-lg font-bold text-pink-600">
-            ${product.price}
+          ${product.price}
         </div>
-        </div>
-
+      </div>
 
       {/* Add to Cart */}
-     <button
+      <button
         onClick={() => onAddToCart(product)}
         className="mt-4 w-full flex items-center justify-center gap-2 
-             bg-purple-600 text-white py-2.5 px-4 rounded-full font-medium
-             hover:bg-purple-700 hover:shadow-md hover:scale-105
-             transition-transform duration-200"
-        >
+          bg-purple-600 text-white py-2.5 px-4 rounded-full font-medium
+          hover:bg-purple-700 hover:shadow-md hover:scale-105
+          transition-transform duration-200"
+      >
         <FaShoppingCart className="text-sm" />
         Add To Cart
-        </button>
+      </button>
     </div>
   );
 }

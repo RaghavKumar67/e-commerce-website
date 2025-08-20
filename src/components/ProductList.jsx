@@ -6,7 +6,7 @@ export default function ProductList({ products, onAddToCart }) {
     <section className="max-w-7xl mx-auto px-4 py-10">
       {/* Section Header */}
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold">NEW ARRIVALS</h2>
+        <h2 className="text-2xl font-bold">New Arrivals</h2>
         <a href="#" className="text-pink-500 hover:underline">View All</a>
       </div>
 

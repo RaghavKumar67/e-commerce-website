@@ -1,0 +1,68 @@
+const products = [
+  {
+    id: 1,
+    name: "Rainbow Sequin Dress",
+    image: "/assets/product-img/product-img-1.webp",
+    oldPrice: 12.99,
+    price: 6.99,
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Feminine Wrap Blouse",
+    image: "/assets/product-img/product-img-2.webp",
+    oldPrice: 9.99,
+    price: 6.99,
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Trendy Bucket Hat",
+    image: "/assets/product-img/product-img-3.webp",
+    oldPrice: 18.99,
+    price: 10.99,
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Boho Maxi Dress",
+    image: "/assets/product-img/product-img-4.webp",
+    oldPrice: 20.99,
+    price: 10.99,
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Casual Denim Jacket",
+    image: "/assets/product-img/product-img-5.webp",
+    oldPrice: 20.99,
+    price: 10.99,
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "Stylish Statement Earrings",
+    image: "/assets/product-img/product-img-6.webp",
+    oldPrice: 12.99,
+    price: 9.99,
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: "Leather Dress Shoes",
+    image: "/assets/product-img/product-img-7.webp",
+    oldPrice: 19.99,
+    price: 18.99,
+    rating: 5,
+  },
+  {
+    id: 8,
+    name: "Wool Peacoat",
+    image: "/assets/product-img/product-img-8.webp",
+    oldPrice: 25.99,
+    price: 13.99,
+    rating: 5,
+  },
+];
+
+export default products;

@@ -1,7 +1,17 @@
 import React from "react";
 import { FaShoppingCart, FaHeart, FaExpand } from "react-icons/fa";
+import { useWishlist } from "../context/WishlistContext";
+import { useNavigate } from "react-router-dom"; // ✅ add this
 
 export default function ProductCard({ product, onAddToCart }) {
+  const { addToWishlist } = useWishlist();
+  const navigate = useNavigate(); // ✅ create navigate hook
+
+  const handleWishlistClick = () => {
+    addToWishlist(product);   // add to wishlist
+    navigate("/wishlist");    // redirect to wishlist page
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-md p-4 group relative overflow-hidden">
       {/* Product Image */}
@@ -15,7 +25,10 @@ export default function ProductCard({ product, onAddToCart }) {
         {/* Hover Overlay Buttons */}
         <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
           {/* Favorite Button */}
-          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-yellow-400 hover:text-white transition">
+          <button
+            onClick={handleWishlistClick} // ✅ now adds & redirects
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-yellow-400 hover:text-white transition"
+          >
             <FaHeart size={16} />
           </button>
 

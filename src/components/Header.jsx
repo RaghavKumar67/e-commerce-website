@@ -6,10 +6,13 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import AllCategoriesDropdown from "./AllCategoriesDropdown";
+import { useWishlist } from "../context/WishlistContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { wishlist } = useWishlist();
 
   return (
     <header className="header">
@@ -42,8 +45,10 @@ export default function Header() {
           {/* Left: Logo */}
           <div className="flex items-center flex-shrink-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-              <span className="text-purple-600">Shop</span>
-              <span className="text-yellow-500">Cart</span>
+              <Link to="/">
+                <span className="text-purple-600">Shop</span>
+                <span className="text-yellow-500">Cart</span>
+              </Link>
             </h1>
           </div>
 
@@ -56,19 +61,20 @@ export default function Header() {
 
           {/* Right: Icons */}
           <div className="flex items-center space-x-4 sm:space-x-6 text-gray-700">
-            <div className="relative cursor-pointer">
+            {/* Wishlist */}
+            <Link to="/wishlist" className="relative cursor-pointer">
               <FaHeart className="text-xl sm:text-2xl" />
-              <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1 rounded-full">
-                2
-              </span>
-            </div>
+              {wishlist.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1 rounded-full">
+                  {wishlist.length}
+                </span>
+              )}
+            </Link>
 
-            <div className="relative cursor-pointer">
+            {/* Cart (just static for now) */}
+            <Link to="/cart" className="relative cursor-pointer">
               <FaShoppingCart className="text-xl sm:text-2xl" />
-              <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-1 rounded-full">
-                2
-              </span>
-            </div>
+            </Link>
 
             {/* Mobile Hamburger */}
             <button
@@ -98,9 +104,9 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-6 font-medium">
-            <a href="#" className="hover:text-yellow-300">
+            <Link to="/" className="hover:text-yellow-300">
               Home
-            </a>
+            </Link>
             <a href="#" className="hover:text-yellow-300">
               Shop +
             </a>

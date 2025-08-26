@@ -1,15 +1,15 @@
 import React from "react";
 import { FaShoppingCart, FaHeart, FaExpand } from "react-icons/fa";
 import { useWishlist } from "../context/WishlistContext";
-import { useNavigate } from "react-router-dom"; // ✅ add this
+import { useNavigate } from "react-router-dom"; 
 
 export default function ProductCard({ product, onAddToCart }) {
   const { addToWishlist } = useWishlist();
-  const navigate = useNavigate(); // ✅ create navigate hook
+  const navigate = useNavigate();
 
   const handleWishlistClick = () => {
-    addToWishlist(product);   // add to wishlist
-    navigate("/wishlist");    // redirect to wishlist page
+    addToWishlist(product);   
+    navigate("/wishlist");    
   };
 
   return (
@@ -26,29 +26,29 @@ export default function ProductCard({ product, onAddToCart }) {
         <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition">
           {/* Favorite Button */}
           <button
-            onClick={handleWishlistClick} // ✅ now adds & redirects
+            onClick={handleWishlistClick} 
             className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-yellow-400 hover:text-white transition"
           >
             <FaHeart size={16} />
           </button>
 
-          {/* Expand / Details Button */}
+          
           <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-purple-600 hover:text-white transition">
             <FaExpand size={16} />
           </button>
         </div>
       </div>
 
-      {/* Rating */}
+     
       <div className="flex text-yellow-500 mt-2">
         {"★".repeat(product.rating)}{" "}
         {"☆".repeat(5 - product.rating)}
       </div>
 
-      {/* Product Info */}
+      
       <h3 className="font-semibold mt-2">{product.name}</h3>
 
-      {/* Price Section */}
+     
       <div className="flex items-center gap-2 mt-1">
         <div className="text-sm text-gray-500 line-through">
           ${product.oldPrice}
@@ -58,7 +58,7 @@ export default function ProductCard({ product, onAddToCart }) {
         </div>
       </div>
 
-      {/* Add to Cart */}
+      
       <button
         onClick={() => onAddToCart(product)}
         className="mt-4 w-full flex items-center justify-center gap-2 

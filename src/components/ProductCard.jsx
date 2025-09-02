@@ -33,7 +33,9 @@ export default function ProductCard({ product, onAddToCart }) {
           </button>
 
           
-          <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-purple-600 hover:text-white transition">
+          <button 
+           onClick={() => navigate(`/product/${product.id}`)} 
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-purple-600 hover:text-white transition">
             <FaExpand size={16} />
           </button>
         </div>

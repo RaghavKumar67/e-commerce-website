@@ -6,6 +6,7 @@ const products = [
     oldPrice: 12.99,
     price: 6.99,
     rating: 5,
+    category: "Dresses", // ✅ new field
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const products = [
     oldPrice: 9.99,
     price: 6.99,
     rating: 5,
+    category: "Dresses",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const products = [
     oldPrice: 18.99,
     price: 10.99,
     rating: 5,
+    category: "Cap", // ✅ falls under Cap
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const products = [
     oldPrice: 20.99,
     price: 10.99,
     rating: 5,
+    category: "Dresses",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const products = [
     oldPrice: 20.99,
     price: 10.99,
     rating: 5,
+    category: "Sweaters",
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const products = [
     oldPrice: 12.99,
     price: 9.99,
     rating: 5,
+    category: "Gifts",
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ const products = [
     oldPrice: 19.99,
     price: 18.99,
     rating: 5,
+    category: "Boots",
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ const products = [
     oldPrice: 25.99,
     price: 13.99,
     rating: 5,
+    category: "Sweaters",
   },
 ];
 

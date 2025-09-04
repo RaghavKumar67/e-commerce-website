@@ -1,23 +1,27 @@
+// src/components/AllCategoriesDropdown.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { FaBars, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ for navigation
+
+// ✅ Export categories so they can be reused
+export const categories = [
+  { name: "Dresses", icon: "👗" },
+  { name: "Bags", icon: "👜" },
+  { name: "Sweaters", icon: "🧥" },
+  { name: "Boots", icon: "👢" },
+  { name: "Gifts", icon: "🎁" },
+  { name: "Sneakers", icon: "👟" },
+  { name: "Watches", icon: "⌚" },
+  { name: "Gold Ring", icon: "💍" },
+  { name: "Cap", icon: "🧢" },
+  { name: "Sunglasses", icon: "🕶" },
+  { name: "Baby Shop", icon: "🍼" },
+];
 
 export default function AllCategoriesDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const categories = [
-    { name: "Dresses", icon: "👗" },
-    { name: "Bags", icon: "👜" },
-    { name: "Sweaters", icon: "🧥" },
-    { name: "Boots", icon: "👢" },
-    { name: "Gifts", icon: "🎁" },
-    { name: "Sneakers", icon: "👟" },
-    { name: "Watches", icon: "⌚" },
-    { name: "Gold Ring", icon: "💍" },
-    { name: "Cap", icon: "🧢" },
-    { name: "Sunglasses", icon: "🕶" },
-    { name: "Baby Shop", icon: "🍼" }
-  ];
+  const navigate = useNavigate();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -29,6 +33,11 @@ export default function AllCategoriesDropdown() {
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
   }, []);
+
+  const handleCategoryClick = (categoryName) => {
+    setIsOpen(false);
+    navigate(`/category?name=${encodeURIComponent(categoryName)}`);
+  };
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -52,6 +61,7 @@ export default function AllCategoriesDropdown() {
           {categories.map((cat, index) => (
             <div
               key={index}
+              onClick={() => handleCategoryClick(cat.name)}
               className="flex justify-between items-center px-4 py-3 hover:bg-purple-100 cursor-pointer text-gray-800 hover:text-purple-600 text-sm sm:text-base"
             >
               <span className="flex items-center">

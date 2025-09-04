@@ -7,6 +7,7 @@ import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Payment from "./pages/Payment";
+import CategoryPage from "./pages/CategoryPage";
 import { WishlistProvider } from "./context/WishlistContext";
 import { CartProvider } from "./context/CartContext"; 
 import { Toaster } from "react-hot-toast"; // ✅ import
@@ -24,6 +25,7 @@ export default function App() {
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
               <Route path="payment" element={<Payment />} />
+              <Route path="category" element={<CategoryPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

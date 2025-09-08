@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 export default function HeroSlider({ slides }) {
   const settings = {
@@ -37,9 +38,12 @@ export default function HeroSlider({ slides }) {
       <p className="mt-4 text-lg md:text-xl max-w-lg text-black">
         {slide.subtitle}
       </p>
-      <button className="mt-6 bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-full font-medium">
-        {slide.buttonText}
-      </button>
+      <Link
+  to="/cart"
+  className="mt-6 inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-full font-medium"
+>
+  {slide.buttonText}
+</Link>
     </div>
   </div>
 </div>

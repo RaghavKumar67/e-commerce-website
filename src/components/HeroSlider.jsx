@@ -39,7 +39,7 @@ export default function HeroSlider({ slides }) {
         {slide.subtitle}
       </p>
       <Link
-  to="/cart"
+  to="/category"
   className="mt-6 inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-full font-medium"
 >
   {slide.buttonText}

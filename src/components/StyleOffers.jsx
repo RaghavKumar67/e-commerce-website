@@ -1,5 +1,5 @@
-
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 export default function StyleOffers() {
   return (
@@ -12,9 +12,14 @@ export default function StyleOffers() {
             Get 65% Offer & Make New Fusion.
           </h2>
         </div>
-        <button className="mt-6 inline-flex items-center px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-medium rounded-full shadow-md transition w-auto self-start">
+
+        {/* ✅ Link to Category Page */}
+        <Link
+          to="/category"   // 👈 change this to your actual category route
+          className="mt-6 inline-flex items-center px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-medium rounded-full shadow-md transition w-auto self-start"
+        >
           Shop Now <span className="ml-2">➜</span>
-        </button>
+        </Link>
       </div>
 
       {/* Right Offer Box */}
@@ -25,9 +30,14 @@ export default function StyleOffers() {
             Make your New Styles with Our Products
           </h2>
         </div>
-        <button className="mt-6 inline-flex items-center px-5 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full shadow-md transition w-auto self-start">
+
+        {/* ✅ Link to Category Page */}
+        <Link
+          to="/category"   // 👈 change this too
+          className="mt-6 inline-flex items-center px-5 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full shadow-md transition w-auto self-start"
+        >
           Shop Now <span className="ml-2">➜</span>
-        </button>
+        </Link>
       </div>
     </section>
   );

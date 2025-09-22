@@ -1,7 +1,5 @@
-
-
-
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 const categories = [
   { id: 1, name: "Dresses", img: "/assets/category-img/dresses.webp" },
@@ -24,16 +22,20 @@ export default function Categories() {
       {/* Section Header */}
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold">Our Categories</h2>
-        <a href="#" className="text-blue-900 font-semibold hover:underline">
+        <Link
+          to="/category" // ✅ goes to /category
+          className="text-blue-900 font-semibold hover:underline"
+        >
           View All
-        </a>
+        </Link>
       </div>
 
       {/* Categories Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {categories.map((cat) => (
-          <div
+          <Link
             key={cat.id}
+            to="/category" // ✅ every card goes to /category
             className="bg-pink-50 rounded-xl p-6 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition"
           >
             <div className="w-20 h-20 flex items-center justify-center mb-4">
@@ -44,7 +46,7 @@ export default function Categories() {
               />
             </div>
             <p className="text-gray-800 font-medium text-center">{cat.name}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

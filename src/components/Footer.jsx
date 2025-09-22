@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
-          <p className="mb-2">123 Market Street, New Delhi, India</p>
+          <p className="mb-2">India</p>
           <p className="mb-2">Email: support@shopcart.com</p>
           <p className="mb-2">Phone: +91 9876543210</p>
         </div>

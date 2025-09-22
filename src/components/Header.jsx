@@ -9,9 +9,11 @@ import {
 import { Link } from "react-router-dom";
 import AllCategoriesDropdown from "./AllCategoriesDropdown";
 import { useWishlist } from "../context/WishlistContext";
+import SearchModal from "./SearchModal"; // ✅ import modal here
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false); // ✅ state for search modal
   const { wishlist } = useWishlist();
 
   return (
@@ -54,7 +56,10 @@ export default function Header() {
 
           {/* Middle: Search Button (hidden on mobile) */}
           <div className="hidden sm:flex flex-grow justify-end">
-            <button className="bg-yellow-400 text-black p-3 rounded-full hover:bg-yellow-500">
+            <button
+              className="bg-yellow-400 text-black p-3 rounded-full hover:bg-yellow-500"
+              onClick={() => setSearchOpen(true)} // ✅ open modal
+            >
               <FaSearch />
             </button>
           </div>
@@ -85,11 +90,14 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Desktop Button */}
+          {/* Desktop Button (now a Link to /cart) */}
           <div className="hidden sm:block flex-shrink-0">
-            <button className="bg-yellow-400 text-black px-4 sm:px-5 py-2 rounded-full hover:bg-yellow-500 font-medium">
+            <Link
+              to="/category"
+              className="bg-yellow-400 text-black px-4 sm:px-5 py-2 rounded-full hover:bg-yellow-500 font-medium inline-block"
+            >
               Shop Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -142,6 +150,9 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(false)}
         ></div>
       )}
+
+      {/* ✅ Search Modal */}
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }
